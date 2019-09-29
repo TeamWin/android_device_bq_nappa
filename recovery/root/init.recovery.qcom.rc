@@ -8,6 +8,9 @@ on fs
     write /sys/class/android_usb/android0/iProduct ${ro.product.model}
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
 
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
 on property:sys.usb.config=none
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/bDeviceClass 0

@@ -6,9 +6,7 @@ else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
-PRODUCT_COPY_FILES += \
-    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata \
-    device/bq/nappa/kernel:kernel
+PRODUCT_COPY_FILES += device/bq/nappa/kernel:kernel
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := nappa

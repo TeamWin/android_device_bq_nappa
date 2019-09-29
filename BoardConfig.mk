@@ -30,7 +30,6 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/virtual/android_usb/android0/f_m
 
 # TWRP-Specific
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_QCOM_RTC_FIX := true
 RECOVERY_SDCARD_ON_DATA := true
 TW_THEME := portrait_hdpi
 TW_INPUT_BLACKLIST := "hbtp_vm"
