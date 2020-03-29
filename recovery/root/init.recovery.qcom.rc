@@ -1,4 +1,9 @@
 on fs
+    chmod 0660 /dev/qseecom
+    chown system drmrpc /dev/qseecom
+    chmod 0664 /dev/ion
+    chown system system /dev/ion
+
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
@@ -32,8 +37,7 @@ on property:sys.usb.config=adb
     write /sys/class/android_usb/android0/enable ${service.adb.root}
     start adbd
 
-on init
-service sbinqseecomd /sbin/qseecomd.sh
+service sbinqseecomd /sbin/qseecomd
     oneshot
     disabled
     user root
